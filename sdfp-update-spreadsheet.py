@@ -607,7 +607,7 @@ def main():
 
     end_date = pd.to_datetime(datetime.datetime.utcnow())
     start_date = end_date - datetime.timedelta(days=30)
-    drift_corrected_df = pd.read_sql_query(f"SELECT * FROM sensor_water_depth WHERE date >= '{start_date}' AND date <= '{end_date}'", engine).sort_values(['place','date']).drop_duplicates()
+    drift_corrected_df = pd.read_sql_query(f"SELECT * FROM date_for_display WHERE date >= '{start_date}' AND date <= '{end_date}'", engine).sort_values(['place','date']).drop_duplicates()
 
     # new_data = get_wd_w_buffer(start_date, end_date, engine)
     # surveys = get_surveys(engine)
